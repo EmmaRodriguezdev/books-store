@@ -1,29 +1,22 @@
 import { BookCase, ReadingList } from "../shared/components/BookCase";
 import { Separator } from "../shared/components/BookCase";
 import { BookList } from "../shared/components/BookCase";
-import data from "../../books.json";
-import type { Book } from "../shared/types/book";
-import useStore from "./store";
+import useBooks from "../shared/hooks/useBooks";
 
 function App() {
-  const { setStore, removeFromStore, books: currentBooks } = useStore();
-  const books = (data.library as { book: Book }[]).map((item) => item.book);
-  const readingList = currentBooks;
-
-  const handleAddToReadingList = (book: Book) => {
-    setStore(book);
-  };
-
-  const handleRemoveFromReadingList = (isbn: string) => {
-    removeFromStore(isbn);
-  };
+  const {
+    books,
+    handleAddToReadingList,
+    handleRemoveFromReadingList,
+    readingList,
+  } = useBooks();
 
   return (
     <div className="grid grid-rows-[40px_1fr_40px] min-h-screen overflow-x-hidden">
       <header className="font-extrabold text-2xl text-center">
         Books Store 📚
       </header>
-      <main className="px-4 md:px-8 lg:px-16 w-full max-w-[1440px] mx-auto">
+      <main className="px-4 md:px-8 lg:px-16 w-full max-w-[1440px] mx-auto mb-2">
         <BookCase>
           <ReadingList
             books={readingList}

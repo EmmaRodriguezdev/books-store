@@ -10,7 +10,6 @@ const ReadingList = ({
   if (books.length === 0) {
     return (
       <div className="w-full text-center min-h-[20em] flex flex-col justify-center gap-4 ">
-        <strong className="text-2xl">My Reading List</strong>
         <p className="text-lg">Your reading list is empty</p>
       </div>
     );
@@ -33,9 +32,6 @@ const ReadingList = ({
             </figure>
             <div className="absolute inset-0 flex flex-col items-center justify-center rounded-lg gap-4 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity ease-in-out duration-300">
               <div className="flex flex-col items-center gap-4">
-                <button className="bg-white text-black px-3 py-1 rounded-lg shadow cursor-pointer hover:bg-current/5">
-                  Editar
-                </button>
                 <button
                   className="bg-red-500 text-white px-3 py-1 rounded-lg shadow cursor-pointer hover:bg-current/5"
                   onClick={() => handleRemoveFromReadingList(book.ISBN)}
