@@ -26,7 +26,7 @@ function App() {
             books={readingList}
             handleRemoveFromReadingList={handleRemoveFromReadingList}
           />
-          <figure className="w-80 absolute translate-y-[7em] bg-transparent z-10 left-10 flex flex-col items-center">
+          <figure className="w-80 absolute translate-y-[7em] bg-transparent z-10 left-10 hidden flex-col items-center md:flex">
             <figcaption className="text-4xl font-bold absolute -top-10 left-10 w-full">
               My Reading List
             </figcaption>
