@@ -11,3 +11,8 @@ export interface Book {
     otherBooks: string[];
   };
 }
+
+export interface SelectProps {
+  value: string | number;
+  label: string;
+}

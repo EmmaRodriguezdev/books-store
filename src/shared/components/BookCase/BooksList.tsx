@@ -7,8 +7,13 @@ const BookList = ({
   books: Book[];
   handleAddToReadingList: (book: Book) => void;
 }) => {
+  if (books.length === 0) {
+    return (
+      <strong className="text-center mt-10 text-2xl">No books available</strong>
+    );
+  }
   return (
-    <ul className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-10 m-[20px_100px]">
+    <ul className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-10 m-[3px_10px] md:m-[20px_20px]">
       {books.map((book) => (
         <li
           key={book.ISBN}
