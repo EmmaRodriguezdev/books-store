@@ -1,6 +1,7 @@
 import { BookCase, ReadingList } from "../shared/components/BookCase";
 import { Separator } from "../shared/components/BookCase";
 import { BookList } from "../shared/components/BookCase";
+import Filters from "../shared/components/Filters";
 import useBooks from "../shared/hooks/useBooks";
 
 function App() {
@@ -9,6 +10,9 @@ function App() {
     handleAddToReadingList,
     handleRemoveFromReadingList,
     readingList,
+    handleSearch,
+    catalogGenres,
+    handleGenreFilter,
   } = useBooks();
 
   return (
@@ -29,6 +33,11 @@ function App() {
             <img src="/books.png" alt="books" className="" />
           </figure>
           <Separator />
+          <Filters
+            handleSearch={handleSearch}
+            catalogGenres={catalogGenres()}
+            handleGenreFilter={handleGenreFilter}
+          />
           <BookList
             books={books}
             handleAddToReadingList={handleAddToReadingList}

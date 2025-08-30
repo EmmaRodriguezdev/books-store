@@ -17,7 +17,7 @@ const ReadingList = ({
 
   return (
     <section className="max-w-full flex items-center justify-end gap-4 min-h-[20em] mx-[120px]">
-      <ul className="inline-flex gap-10 overflow-x-auto max-w-[40vw]">
+      <ul className="inline-flex gap-10 scrollbar scrollbar-light overflow-x-auto max-w-[40vw]">
         {books.map((book) => (
           <li key={book.ISBN} className="relative group cursor-pointer w-40">
             <figure className="w-40 aspect-[9/12] flex-shrink-0">
